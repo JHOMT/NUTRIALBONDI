@@ -24,6 +24,29 @@
             scroll-behavior: smooth;
         }
 
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .logo-container img {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #F87171;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
         .hero-video {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             transition: all 0.3s ease;
@@ -43,7 +66,7 @@
         }
 
         .nav-link:hover {
-            color: #f6e05e; /* Amarillo */
+            color: #f6e05e;
         }
 
         .nav-link::after {
@@ -53,7 +76,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #f6e05e; /* Amarillo */
+            background-color: #f6e05e;
             transition: width 0.3s ease;
         }
 
@@ -69,7 +92,6 @@
             background-size: 1em;
         }
 
-        /* Estilos para el menú móvil */
         #mainNav.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
@@ -174,24 +196,24 @@
 <header class="bg-red-600 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-3">
-            <!-- Logo y nombre de la marca -->
-            <div class="flex items-center space-x-2 md:space-x-4">
-                <img src="./img/logo%20nutrialbondi.png" alt="Logo NUTRIALBONDI"
-                     class="h-10 md:h-12 lg:h-14 transition-all duration-300 hover:scale-105">
+            <div class="flex items-center space-x-2 md:space-x-4 relative">
+                <div class="logo-container relative">
+                    <img src="./img/LOGO.png" alt="Logo NUTRIALBONDI"
+                         class="h-10 md:h-12 lg:h-14 transition-all duration-300 hover:scale-105 fi">
+                </div>
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold" data-lang="es">NUTRIALBONDI</h1>
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="en">NUTRIALBONDI</h1>
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="ja">NUTRIALBONDI</h1>
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="zh">NUTRIALBONDI</h1>
             </div>
 
-            <!-- Selector de idioma (visible en desktop) -->
             <div class="hidden md:block">
                 <select id="langSelector"
                         class="language-selector bg-white text-gray-800 rounded-lg px-3 py-1 md:px-4 md:py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-red-300 cursor-pointer text-sm md:text-base">
+                    <option value="zh">🇨🇳 中文</option>
                     <option value="es">🇪🇸 Español</option>
                     <option value="en">🇬🇧 English</option>
                     <option value="ja">🇯🇵 日本語</option>
-                    <option value="zh">🇨🇳 中文</option>
                 </select>
             </div>
 
@@ -252,10 +274,10 @@
                 <!-- Selector de idioma (solo móvil) -->
                 <div class="md:hidden px-3 py-2">
                     <select id="mobileLangSelector" class="w-full bg-white text-gray-800 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-300 cursor-pointer">
+                        <option value="zh">🇨🇳 中文</option>
                         <option value="es">🇪🇸 Español</option>
                         <option value="en">🇬🇧 English</option>
                         <option value="ja">🇯🇵 日本語</option>
-                        <option value="zh">🇨🇳 中文</option>
                     </select>
                 </div>
             </div>
@@ -1090,6 +1112,7 @@
 </footer>
 
 <script>
+
     function changeLang(lang) {
         document.querySelectorAll('[data-lang]').forEach(element => {
             element.classList.add('hidden');
@@ -1119,7 +1142,8 @@
         changeLang(this.value);
     });
 
-    const preferredLang = localStorage.getItem('preferredLang') || 'es';
+    //const preferredLang = localStorage.getItem('preferredLang') || 'zh';
+    const preferredLang = 'zh';
     changeLang(preferredLang);
 
     document.querySelectorAll('#mainNav a').forEach(link => {
