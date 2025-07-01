@@ -263,6 +263,55 @@
     </nav>
 </header>
 
+
+<!-- Hero Section -->
+<section id="inicio" class="relative bg-gradient-to-b from-red-500 to-red-600 text-white py-20 md:py-32 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIvPjwvc3ZnPg==');"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" data-lang="es">Alimentos Nutritivos y Divertidos para Niños</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight hidden" data-lang="en">Nutritious and Fun Foods for Kids</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight hidden" data-lang="ja">子供のための栄養たっぷりで楽しい食品</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight hidden" data-lang="zh">为孩子们提供营养又有趣的食品</h2>
+
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8" data-lang="es">Combinamos sabor, salud y confianza para que las familias tengan una opción segura y deliciosa.</p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 hidden" data-lang="en">We combine taste, health, and trust so families have a safe and delicious option.</p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 hidden" data-lang="ja">味、健康、信頼を組み合わせ、家族に安全で美味しい選択肢を提供します。</p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 hidden" data-lang="zh">我们结合美味、健康与信任，为家庭提供安全美味的选择。</p>
+
+            <div class="flex justify-center space-x-4">
+                <a href="#productos" class="btn-primary px-6 py-3 rounded-full font-semibold" data-lang="es">Ver Productos</a>
+                <a href="#productos" class="btn-primary px-6 py-3 rounded-full font-semibold hidden" data-lang="en">View Products</a>
+                <a href="#productos" class="btn-primary px-6 py-3 rounded-full font-semibold hidden" data-lang="ja">商品を見る</a>
+                <a href="#productos" class="btn-primary px-6 py-3 rounded-full font-semibold hidden" data-lang="zh">查看产品</a>
+
+                <a href="#contacto" class="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition" data-lang="es">Contactar</a>
+                <a href="#contacto" class="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition hidden" data-lang="en">Contact Us</a>
+                <a href="#contacto" class="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition hidden" data-lang="ja">お問い合わせ</a>
+                <a href="#contacto" class="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition hidden" data-lang="zh">联系我们</a>
+            </div>
+        </div>
+
+        <!-- Video Animation -->
+        <div class="mt-16 flex justify-center">
+            <div class="hero-video w-full max-w-4xl">
+                <video autoplay loop muted playsinline class="w-full rounded-lg">
+                    <source src="./video/Vídeo%20sin%20título.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+        </div>
+
+        <!-- Floating elements for decoration -->
+        <div class="absolute top-20 left-10 w-8 h-8 bg-yellow-300 rounded-full opacity-20 floating" style="animation-delay: 0.2s;"></div>
+        <div class="absolute top-1/3 right-20 w-12 h-12 bg-white rounded-full opacity-10 floating" style="animation-delay: 0.4s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-10 h-10 bg-yellow-300 rounded-full opacity-15 floating" style="animation-delay: 0.6s;"></div>
+    </div>
+</section>
+
 <!-- Misión -->
 <section id="mision" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
@@ -569,64 +618,142 @@
             <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">认识Nutrialbondi背后的才华横溢的团队</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
             <div class="team-member text-center p-6">
                 <div class="relative inline-block mb-4">
-                    <img src="./img/profile.jpg" alt="Colaborador 1" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
-                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                </div>
-                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600 mb-3">Chef y Desarrollador de Recetas</p>
-                <p class="text-sm text-gray-500 mb-4" data-lang="es">Especialista en crear recetas deliciosas y nutritivas para niños.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Specialist in creating delicious and nutritious recipes for children.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">子供向けの美味しく栄養価の高いレシピ作成の専門家。</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">专门为儿童创造美味营养食谱的专家。</p>
-                <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member text-center p-6">
-                <div class="relative inline-block mb-4">
-                    <img src="./img/profile.jpg" alt="Colaborador 2" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
-                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                </div>
-                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600 mb-3">Nutricionista Infantil</p>
-                <p class="text-sm text-gray-500 mb-4" data-lang="es">Garantiza que todos nuestros productos cumplan con los estándares nutricionales.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Ensures all our products meet nutritional standards.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">すべての製品が栄養基準を満たしていることを保証します。</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">确保我们所有产品都符合营养标准。</p>
-                <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member text-center p-6">
-                <div class="relative inline-block mb-4">
-                    <img src="./img/profile.jpg" alt="Colaborador 3" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <img src="./img/DanuskaAntuanetRamírezAguayo.jpg" alt="Danuska Antuanet Ramírez Aguayo" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
                     <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
                         <i class="fas fa-palette"></i>
                     </div>
                 </div>
-                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600 mb-3">Diseñador de Packaging</p>
-                <p class="text-sm text-gray-500 mb-4" data-lang="es">Crea empaques atractivos y funcionales que encantan a los niños.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Creates attractive and functional packaging that delights children.</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">子供たちを喜ばせる魅力的で機能的なパッケージをデザインします。</p>
-                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">设计吸引儿童的功能性包装。</p>
+                <h5 class="font-semibold text-lg">Danuska Antuanet Ramírez Aguayo</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración y Marketing</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">Business Administration and Marketing</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">ビジネス管理とマーケティング</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">商业管理与市场营销</p>
+                <p class="text-sm text-gray-500 mb-4">Contacto de 2º grado 2º</p>
                 <div class="flex justify-center space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-behance"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-dribbble"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/danuska-antuanet-ram%C3%ADrez-aguayo-314a351ab/" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/JhoanaSalomeOlayaRodas.jpg" alt="Jhoana Salome Olaya Rodas" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Jhoana Salome Olaya Rodas</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/jhoana-salome-olaya-rodas-586081202/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/SabrinaMazabel.jpg" alt="Sabrina Mazabel" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Sabrina Mazabel</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/sabrina-mazabel/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/JuanQuevedoQuiroz.jpg" alt="Juan Gianpiero Oliva Mera" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Juan Gianpiero Oliva Mera</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/juan-gianpiero-oliva-mera-7751652ab/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/TiaraFernandez.jpg" alt="Tiara Fernandez" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Tiara Fernandez</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/tiara-fernandez295/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/LoghanTello.jpg" alt="Loghan Tello" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Loghan Tello</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/loghan-tello-4147b7284/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/JuanQuevedoQuiroz.jpg" alt="Juan Quevedo Quiroz" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Juan Quevedo Quiroz</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/juan-quevedo-quiroz-523449293/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/CamilaBenelSanchez.jpg" alt="Camila Benel Sanchez" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Camila Benel Sanchez</h5>
+                <p class="text-sm text-gray-600 mb-3" data-lang="es">Administración de Negocios Internacionales</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="en">International Business Administration</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="ja">国際ビジネス管理</p>
+                <p class="text-sm text-gray-600 mb-3 hidden" data-lang="zh">国际商业管理</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://www.linkedin.com/in/camila-benel-sanchez-a83b09294/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -945,37 +1072,28 @@
     </div>
 </footer>
 
-<!-- Language Switcher JS -->
 <script>
-    // Función para cambiar el idioma
-    // Función para cambiar el idioma
     function changeLang(lang) {
-        // Ocultar todos los elementos de todos los idiomas
         document.querySelectorAll('[data-lang]').forEach(element => {
             element.classList.add('hidden');
         });
 
-        // Mostrar solo los elementos del idioma seleccionado
         document.querySelectorAll(`[data-lang="${lang}"]`).forEach(element => {
             element.classList.remove('hidden');
         });
 
-        // Actualizar ambos selectores de idioma
         document.getElementById('langSelector').value = lang;
         document.getElementById('mobileLangSelector').value = lang;
 
-        // Guardar preferencia de idioma
         localStorage.setItem('preferredLang', lang);
     }
 
-    // Manejar el botón del menú móvil
     document.getElementById('mobileMenuButton').addEventListener('click', function() {
         const nav = document.getElementById('mainNav');
         nav.classList.toggle('hidden');
         nav.classList.toggle('active');
     });
 
-    // Selectores de idioma
     document.getElementById('langSelector').addEventListener('change', function() {
         changeLang(this.value);
     });
@@ -984,11 +1102,9 @@
         changeLang(this.value);
     });
 
-    // Cargar idioma preferido o usar español por defecto
     const preferredLang = localStorage.getItem('preferredLang') || 'es';
     changeLang(preferredLang);
 
-    // Cerrar menú móvil al hacer clic en un enlace
     document.querySelectorAll('#mainNav a').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth < 768) {
@@ -997,7 +1113,6 @@
         });
     });
 
-    // Ajustar el menú al cambiar el tamaño de la ventana
     window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
             document.getElementById('mainNav').classList.remove('hidden');
@@ -1006,14 +1121,12 @@
         }
     });
 
-    // Configurar ScrollReveal para animaciones
     ScrollReveal().reveal('.sr-delay-1', { delay: 100 });
     ScrollReveal().reveal('.sr-delay-2', { delay: 200 });
     ScrollReveal().reveal('.sr-delay-3', { delay: 300 });
     ScrollReveal().reveal('.sr-delay-4', { delay: 400 });
     ScrollReveal().reveal('.sr-delay-5', { delay: 500 });
 
-    // Botón para ir arriba
     const scrollTopBtn = document.getElementById('scrollTopBtn');
 
     window.addEventListener('scroll', () => {
@@ -1031,7 +1144,6 @@
         });
     });
 
-    // Smooth scrolling para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1048,12 +1160,10 @@
         });
     });
 
-    // Video autoplay en móviles (requiere interacción del usuario)
     document.addEventListener('DOMContentLoaded', function() {
         const videos = document.querySelectorAll('video');
 
         videos.forEach(video => {
-            // Para móviles, agregamos un botón de play overlay
             if (window.innerWidth <= 768) {
                 const playButton = document.createElement('div');
                 playButton.innerHTML = '<i class="fas fa-play"></i>';
@@ -1084,13 +1194,11 @@
                     playButton.style.display = 'none';
                 });
             } else {
-                // En desktop, intentamos autoplay con mute
                 video.muted = true;
                 const playPromise = video.play();
 
                 if (playPromise !== undefined) {
                     playPromise.catch(error => {
-                        // Si falla el autoplay, mostramos controles
                         video.controls = true;
                     });
                 }
