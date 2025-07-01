@@ -3,246 +3,1100 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NUTRIALBONDI</title>
+    <meta name="description" content="Alimentos nutritivos y divertidos para niños - Nutrialbondi">
+    <title>NUTRIALBONDI - Alimentos saludables para niños</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary: #e53e3e;
+            --primary-dark: #c53030;
+            --primary-light: #feb2b2;
+            --accent: #f6e05e;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-video {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .hero-video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #f6e05e; /* Amarillo */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #f6e05e; /* Amarillo */
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .language-selector {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
+
+        /* Estilos para el menú móvil */
+        #mainNav.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(to bottom, white 80%, #fff5f5 100%);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, white 70%, #fed7d7 100%);
+        }
+
+        .team-member {
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .team-member img {
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover img {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-selector {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
+
+        .scroll-top-btn {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top-btn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animaciones para ScrollReveal */
+        .sr-delay-1 { transition-delay: 100ms; }
+        .sr-delay-2 { transition-delay: 200ms; }
+        .sr-delay-3 { transition-delay: 300ms; }
+        .sr-delay-4 { transition-delay: 400ms; }
+        .sr-delay-5 { transition-delay: 500ms; }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 antialiased">
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top-btn fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg z-50 hover:bg-red-700 transition-all">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- Header -->
-<header class="bg-red-600 text-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-        <img src="./img/logo%20nutrialbondi.png" alt="Logo NUTRIALBONDI" class="h-12"/>
-        <h1 class="text-2xl font-bold" data-lang="es">NUTRIALBONDI</h1>
-        <h1 class="text-2xl font-bold hidden" data-lang="en">NUTRIALBONDI</h1>
-        <h1 class="text-2xl font-bold hidden" data-lang="ja">NUTRIALBONDI</h1>
-        <h1 class="text-2xl font-bold hidden" data-lang="zh">NUTRIALBONDI</h1>
-        <div>
-            <select id="langSelector" class="text-black rounded p-1">
-                <option value="es">Español</option>
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="zh">中文</option>
-            </select>
+<header class="bg-red-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-3">
+            <!-- Logo y nombre de la marca -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <img src="./img/logo%20nutrialbondi.png" alt="Logo NUTRIALBONDI"
+                     class="h-10 md:h-12 lg:h-14 transition-all duration-300 hover:scale-105">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold" data-lang="es">NUTRIALBONDI</h1>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="en">NUTRIALBONDI</h1>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="ja">NUTRIALBONDI</h1>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="zh">NUTRIALBONDI</h1>
+            </div>
+
+            <!-- Selector de idioma (visible en desktop) -->
+            <div class="hidden md:block">
+                <select id="langSelector"
+                        class="language-selector bg-white text-gray-800 rounded-lg px-3 py-1 md:px-4 md:py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-red-300 cursor-pointer text-sm md:text-base">
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="zh">🇨🇳 中文</option>
+                </select>
+            </div>
+
+            <!-- Botón de menú hamburguesa (solo móvil) -->
+            <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </div>
+
+    <!-- Navegación principal -->
+    <nav id="mainNav" class="bg-red-700 hidden md:block">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-center md:space-x-1 lg:space-x-2 xl:space-x-4 py-2 md:py-0 text-sm md:text-base uppercase font-semibold">
+                <!-- Grupo de enlaces para cada idioma -->
+                <div class="nav-group" data-lang="es">
+                    <a href="#inicio" class="nav-link block md:inline-block px-3 py-2 md:py-3">Inicio</a>
+                    <a href="#mision" class="nav-link block md:inline-block px-3 py-2 md:py-3">Misión</a>
+                    <a href="#vision" class="nav-link block md:inline-block px-3 py-2 md:py-3">Visión</a>
+                    <a href="#valores" class="nav-link block md:inline-block px-3 py-2 md:py-3">Valores</a>
+                    <a href="#productos" class="nav-link block md:inline-block px-3 py-2 md:py-3">Productos</a>
+                    <a href="#colaboradores" class="nav-link block md:inline-block px-3 py-2 md:py-3">Colaboradores</a>
+                    <a href="#contacto" class="nav-link block md:inline-block px-3 py-2 md:py-3">Contacto</a>
+                </div>
+
+                <div class="nav-group hidden" data-lang="en">
+                    <a href="#inicio" class="nav-link block md:inline-block px-3 py-2 md:py-3">Home</a>
+                    <a href="#mision" class="nav-link block md:inline-block px-3 py-2 md:py-3">Mission</a>
+                    <a href="#vision" class="nav-link block md:inline-block px-3 py-2 md:py-3">Vision</a>
+                    <a href="#valores" class="nav-link block md:inline-block px-3 py-2 md:py-3">Values</a>
+                    <a href="#productos" class="nav-link block md:inline-block px-3 py-2 md:py-3">Products</a>
+                    <a href="#colaboradores" class="nav-link block md:inline-block px-3 py-2 md:py-3">Collaborators</a>
+                    <a href="#contacto" class="nav-link block md:inline-block px-3 py-2 md:py-3">Contact</a>
+                </div>
+
+                <div class="nav-group hidden" data-lang="ja">
+                    <a href="#inicio" class="nav-link block md:inline-block px-3 py-2 md:py-3">ホーム</a>
+                    <a href="#mision" class="nav-link block md:inline-block px-3 py-2 md:py-3">ミッション</a>
+                    <a href="#vision" class="nav-link block md:inline-block px-3 py-2 md:py-3">ビジョン</a>
+                    <a href="#valores" class="nav-link block md:inline-block px-3 py-2 md:py-3">価値観</a>
+                    <a href="#productos" class="nav-link block md:inline-block px-3 py-2 md:py-3">商品</a>
+                    <a href="#colaboradores" class="nav-link block md:inline-block px-3 py-2 md:py-3">協力者</a>
+                    <a href="#contacto" class="nav-link block md:inline-block px-3 py-2 md:py-3">お問い合わせ</a>
+                </div>
+
+                <div class="nav-group hidden" data-lang="zh">
+                    <a href="#inicio" class="nav-link block md:inline-block px-3 py-2 md:py-3">首页</a>
+                    <a href="#mision" class="nav-link block md:inline-block px-3 py-2 md:py-3">使命</a>
+                    <a href="#vision" class="nav-link block md:inline-block px-3 py-2 md:py-3">愿景</a>
+                    <a href="#valores" class="nav-link block md:inline-block px-3 py-2 md:py-3">价值观</a>
+                    <a href="#productos" class="nav-link block md:inline-block px-3 py-2 md:py-3">产品</a>
+                    <a href="#colaboradores" class="nav-link block md:inline-block px-3 py-2 md:py-3">合作伙伴</a>
+                    <a href="#contacto" class="nav-link block md:inline-block px-3 py-2 md:py-3">联系</a>
+                </div>
+
+                <!-- Selector de idioma (solo móvil) -->
+                <div class="md:hidden px-3 py-2">
+                    <select id="mobileLangSelector" class="w-full bg-white text-gray-800 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-300 cursor-pointer">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
 
-<!-- Navigation -->
-<nav class="bg-red-700 text-white shadow-md sticky top-0 z-10">
-    <div class="container mx-auto flex justify-center space-x-8 p-3 text-sm uppercase font-semibold">
-        <a href="#inicio" class="hover:text-yellow-300 transition" data-lang="es">Inicio</a>
-        <a href="#inicio" class="hover:text-yellow-300 transition hidden" data-lang="en">Home</a>
-        <a href="#inicio" class="hover:text-yellow-300 transition hidden" data-lang="ja">ホーム</a>
-        <a href="#inicio" class="hover:text-yellow-300 transition hidden" data-lang="zh">首页</a>
-        <a href="#mision" class="hover:text-yellow-300 transition" data-lang="es">Misión</a>
-        <a href="#mision" class="hover:text-yellow-300 transition hidden" data-lang="en">Mission</a>
-        <a href="#mision" class="hover:text-yellow-300 transition hidden" data-lang="ja">ミッション</a>
-        <a href="#mision" class="hover:text-yellow-300 transition hidden" data-lang="zh">使命</a>
-        <a href="#vision" class="hover:text-yellow-300 transition" data-lang="es">Visión</a>
-        <a href="#vision" class="hover:text-yellow-300 transition hidden" data-lang="en">Vision</a>
-        <a href="#vision" class="hover:text-yellow-300 transition hidden" data-lang="ja">ビジョン</a>
-        <a href="#vision" class="hover:text-yellow-300 transition hidden" data-lang="zh">愿景</a>
-        <a href="#valores" class="hover:text-yellow-300 transition" data-lang="es">Valores</a>
-        <a href="#valores" class="hover:text-yellow-300 transition hidden" data-lang="en">Values</a>
-        <a href="#valores" class="hover:text-yellow-300 transition hidden" data-lang="ja">価値観</a>
-        <a href="#valores" class="hover:text-yellow-300 transition hidden" data-lang="zh">价值观</a>
-        <a href="#productos" class="hover:text-yellow-300 transition" data-lang="es">Productos</a>
-        <a href="#productos" class="hover:text-yellow-300 transition hidden" data-lang="en">Products</a>
-        <a href="#productos" class="hover:text-yellow-300 transition hidden" data-lang="ja">商品</a>
-        <a href="#productos" class="hover:text-yellow-300 transition hidden" data-lang="zh">产品</a>
-        <a href="#colaboradores" class="hover:text-yellow-300 transition" data-lang="es">Colaboradores</a>
-        <a href="#colaboradores" class="hover:text-yellow-300 transition hidden" data-lang="en">Collaborators</a>
-        <a href="#colaboradores" class="hover:text-yellow-300 transition hidden" data-lang="ja">協力者</a>
-        <a href="#colaboradores" class="hover:text-yellow-300 transition hidden" data-lang="zh">合作伙伴</a>
-        <a href="#contacto" class="hover:text-yellow-300 transition" data-lang="es">Contacto</a>
-        <a href="#contacto" class="hover:text-yellow-300 transition hidden" data-lang="en">Contact</a>
-        <a href="#contacto" class="hover:text-yellow-300 transition hidden" data-lang="ja">お問い合わせ</a>
-        <a href="#contacto" class="hover:text-yellow-300 transition hidden" data-lang="zh">联系</a>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section id="inicio" class="bg-red-500 text-white py-20 text-center">
-    <div class="container mx-auto">
-        <h2 class="text-4xl font-bold mb-4" data-lang="es">Alimentos Nutritivos y Divertidos para Niños</h2>
-        <h2 class="text-4xl font-bold mb-4 hidden" data-lang="en">Nutritious and Fun Foods for Kids</h2>
-        <h2 class="text-4xl font-bold mb-4 hidden" data-lang="ja">子供のための栄養たっぷりで楽しい食品</h2>
-        <h2 class="text-4xl font-bold mb-4 hidden" data-lang="zh">为孩子们提供营养又有趣的食品</h2>
-        <p class="text-xl max-w-2xl mx-auto" data-lang="es">Combinamos sabor, salud y confianza para que las familias tengan una opción segura y deliciosa.</p>
-        <p class="text-xl max-w-2xl mx-auto hidden" data-lang="en">We combine taste, health, and trust so families have a safe and delicious option.</p>
-        <p class="text-xl max-w-2xl mx-auto hidden" data-lang="ja">味、健康、信頼を組み合わせ、家族に安全で美味しい選択肢を提供します。</p>
-        <p class="text-xl max-w-2xl mx-auto hidden" data-lang="zh">我们结合美味、健康与信任，为家庭提供安全美味的选择。</p>
-        <!-- Video -->
-        <div class="mt-8 flex justify-center">
-            <video controls width="400" class="rounded shadow-lg">
-                <source src="./video/Vídeo%20sin%20título.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-    </div>
-</section>
-
 <!-- Misión -->
-<section id="mision" class="py-16 bg-white">
+<section id="mision" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-red-600 mb-4 text-center">Misión</h3>
-        <p class="text-lg text-center max-w-3xl mx-auto" data-lang="es">Trabajamos cada día en desarrollar alimentos innovadores y de calidad que combinan ingredientes frescos, procesos seguros y presentaciones atractivas, para que las familias encuentren en nosotros una opción confiable y saludable al momento de alimentar a sus niños.</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="en">We work every day to develop innovative, high-quality foods that combine fresh ingredients, safe processes, and attractive presentations, so that families find in us a reliable and healthy option when feeding their children.</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="ja">毎日、新鮮な食材、安全なプロセス、魅力的なプレゼンテーションを組み合わせた革新的で高品質な食品を開発し、家族が子供たちを養う際に信頼できる健康な選択肢となることを目指しています。</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="zh">我们每天都在开发创新、高质量的食品，结合新鲜原料、安全工艺和吸引人的包装，为家庭提供可靠健康的儿童食品选择。</p>
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4" data-lang="es">Nuestra Filosofía</span>
+            <span class="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4 hidden" data-lang="en">Our Philosophy</span>
+            <span class="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4 hidden" data-lang="ja">私たちの理念</span>
+            <span class="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4 hidden" data-lang="zh">我们的理念</span>
+
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-6">Misión</h3>
+
+            <div class="bg-red-50 p-8 md:p-10 rounded-xl">
+                <p class="text-lg md:text-xl leading-relaxed" data-lang="es">Trabajamos cada día en desarrollar alimentos innovadores y de calidad que combinan ingredientes frescos, procesos seguros y presentaciones atractivas, para que las familias encuentren en nosotros una opción confiable y saludable al momento de alimentar a sus niños.</p>
+                <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="en">We work every day to develop innovative, high-quality foods that combine fresh ingredients, safe processes, and attractive presentations, so that families find in us a reliable and healthy option when feeding their children.</p>
+                <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="ja">毎日、新鮮な食材、安全なプロセス、魅力的なプレゼンテーションを組み合わせた革新的で高品質な食品を開発し、家族が子供たちを養う際に信頼できる健康な選択肢となることを目指しています。</p>
+                <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="zh">我们每天都在开发创新、高质量的食品，结合新鲜原料、安全工艺和吸引人的包装，为家庭提供可靠健康的儿童食品选择。</p>
+            </div>
+
+            <div class="mt-10 grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2" data-lang="es">Ingredientes Frescos</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="en">Fresh Ingredients</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="ja">新鮮な食材</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="zh">新鲜食材</h4>
+                    <p class="text-gray-600 text-sm" data-lang="es">Seleccionados cuidadosamente para garantizar calidad.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="en">Carefully selected to ensure quality.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="ja">品質を保証するために慎重に選ばれました。</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="zh">精心挑选以确保质量。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2" data-lang="es">Procesos Seguros</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="en">Safe Processes</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="ja">安全なプロセス</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="zh">安全工艺</h4>
+                    <p class="text-gray-600 text-sm" data-lang="es">Cumpliendo con los más altos estándares de seguridad.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="en">Meeting the highest safety standards.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="ja">最高の安全基準を満たしています。</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="zh">符合最高安全标准。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2" data-lang="es">Presentaciones Atractivas</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="en">Attractive Presentations</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="ja">魅力的なプレゼンテーション</h4>
+                    <h4 class="font-bold text-lg mb-2 hidden" data-lang="zh">吸引人的包装</h4>
+                    <p class="text-gray-600 text-sm" data-lang="es">Diseñadas para ser atractivas para los niños.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="en">Designed to be attractive to children.</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="ja">子供たちにアピールするように設計されています。</p>
+                    <p class="text-gray-600 text-sm hidden" data-lang="zh">专为吸引儿童设计。</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Visión -->
-<section id="vision" class="py-16 bg-gray-100">
+<section id="vision" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-red-600 mb-4 text-center">Visión</h3>
-        <p class="text-lg text-center max-w-3xl mx-auto" data-lang="es">Ser la marca preferida de las familias que buscan alimentos ricos, nutritivos y divertidos para sus niños, ofreciendo productos que combinan sabor, salud y confianza, acompañando el crecimiento de los más pequeños.</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="en">To be the preferred brand for families seeking rich, nutritious, and fun foods for their children, offering products that combine taste, health, and trust, accompanying the growth of the youngest.</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="ja">子供たちのために豊かで栄養価が高く楽しい食品を求める家族のための好まれるブランドになること。味、健康、信頼性を組み合わせた製品を提供し、最も若い世代の成長を支えます。</p>
-        <p class="text-lg text-center max-w-3xl mx-auto hidden" data-lang="zh">成为寻求丰富、营养且有趣儿童食品家庭的首选品牌，提供结合美味、健康与信任的产品，伴随孩子的成长。</p>
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-8">Visión</h3>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-400 to-yellow-300 rounded-lg blur opacity-25"></div>
+                <div class="relative bg-white p-8 md:p-10 rounded-lg shadow-md">
+                    <p class="text-lg md:text-xl leading-relaxed" data-lang="es">Ser la marca preferida de las familias que buscan alimentos ricos, nutritivos y divertidos para sus niños, ofreciendo productos que combinan sabor, salud y confianza, acompañando el crecimiento de los más pequeños.</p>
+                    <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="en">To be the preferred brand for families seeking rich, nutritious, and fun foods for their children, offering products that combine taste, health, and trust, accompanying the growth of the youngest.</p>
+                    <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="ja">子供たちのために豊かで栄養価が高く楽しい食品を求める家族のための好まれるブランドになること。味、健康、信頼性を組み合わせた製品を提供し、最も若い世代の成長を支えます。</p>
+                    <p class="text-lg md:text-xl leading-relaxed hidden" data-lang="zh">成为寻求丰富、营养且有趣儿童食品家庭的首选品牌，提供结合美味、健康与信任的产品，伴随孩子的成长。</p>
+                </div>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="text-left">
+                    <h4 class="font-bold text-xl text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-bullseye mr-3"></i>
+                        <span data-lang="es">Nuestro Objetivo</span>
+                        <span class="hidden" data-lang="en">Our Goal</span>
+                        <span class="hidden" data-lang="ja">私たちの目標</span>
+                        <span class="hidden" data-lang="zh">我们的目标</span>
+                    </h4>
+                    <p class="text-gray-600" data-lang="es">Llegar a ser reconocidos como líderes en alimentación infantil saludable y divertida en toda la región, expandiendo nuestro alcance y manteniendo siempre nuestros estándares de calidad.</p>
+                    <p class="text-gray-600 hidden" data-lang="en">To be recognized as leaders in healthy and fun children's nutrition throughout the region, expanding our reach while always maintaining our quality standards.</p>
+                    <p class="text-gray-600 hidden" data-lang="ja">地域全体で健康的で楽しい子供向け栄養食品のリーダーとして認められ、品質基準を常に維持しながら範囲を拡大すること。</p>
+                    <p class="text-gray-600 hidden" data-lang="zh">成为整个地区健康有趣儿童营养食品的领导者，在扩大覆盖范围的同时始终保持我们的质量标准。</p>
+                </div>
+
+                <div class="text-left">
+                    <h4 class="font-bold text-xl text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-chart-line mr-3"></i>
+                        <span data-lang="es">Nuestra Estrategia</span>
+                        <span class="hidden" data-lang="en">Our Strategy</span>
+                        <span class="hidden" data-lang="ja">私たちの戦略</span>
+                        <span class="hidden" data-lang="zh">我们的战略</span>
+                    </h4>
+                    <p class="text-gray-600" data-lang="es">Innovación constante, mejora continua de procesos y un enfoque centrado en las necesidades reales de las familias y sus niños.</p>
+                    <p class="text-gray-600 hidden" data-lang="en">Constant innovation, continuous process improvement, and a focus on the real needs of families and their children.</p>
+                    <p class="text-gray-600 hidden" data-lang="ja">絶え間ない革新、継続的なプロセスの改善、そして家族とその子供たちの実際のニーズに焦点を当てること。</p>
+                    <p class="text-gray-600 hidden" data-lang="zh">持续创新，不断改进工艺，专注于家庭及其孩子的实际需求。</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Valores -->
-<section id="valores" class="py-16 bg-white">
+<section id="valores" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-red-600 mb-8 text-center">Valores</h3>
+        <div class="text-center mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Valores</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-lang="es">Los principios que guían cada una de nuestras decisiones</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="en">The principles that guide each of our decisions</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="ja">私たちの意思決定を導く原則</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">指导我们每一个决策的原则</p>
+        </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-6 border border-red-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <h4 class="font-bold text-lg text-red-600 mb-2">Compromiso con la Calidad</h4>
-                <p data-lang="es">Productos elaborados con ingredientes frescos y procesos seguros.</p>
-                <p class="hidden" data-lang="en">Products made with fresh ingredients and safe processes.</p>
-                <p class="hidden" data-lang="ja">新鮮な食材と安全なプロセスで作られた製品。</p>
-                <p class="hidden" data-lang="zh">采用新鲜食材和安全工艺制造的产品。</p>
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-award text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Compromiso con la Calidad</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Productos elaborados con ingredientes frescos y procesos seguros.</p>
+                <p class="text-gray-600 hidden" data-lang="en">Products made with fresh ingredients and safe processes.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">新鮮な食材と安全なプロセスで作られた製品。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">采用新鲜食材和安全工艺制造的产品。</p>
             </div>
-            <div class="p-6 border border-red-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <h4 class="font-bold text-lg text-red-600 mb-2">Nutrición Infantil</h4>
-                <p data-lang="es">Promovemos hábitos saludables desde temprana edad.</p>
-                <p class="hidden" data-lang="en">We promote healthy habits from an early age.</p>
-                <p class="hidden" data-lang="ja">幼い頃から健康的な習慣を推奨します。</p>
-                <p class="hidden" data-lang="zh">我们从小培养健康的饮食习惯。</p>
+
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-apple-alt text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Nutrición Infantil</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Promovemos hábitos saludables desde temprana edad.</p>
+                <p class="text-gray-600 hidden" data-lang="en">We promote healthy habits from an early age.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">幼い頃から健康的な習慣を推奨します。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">我们从小培养健康的饮食习惯。</p>
             </div>
-            <div class="p-6 border border-red-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <h4 class="font-bold text-lg text-red-600 mb-2">Responsabilidad y Confianza</h4>
-                <p data-lang="es">Actuamos con transparencia y ética con todos nuestros stakeholders.</p>
-                <p class="hidden" data-lang="en">We act transparently and ethically with all our stakeholders.</p>
-                <p class="hidden" data-lang="ja">すべての関係者に対して透明性と倫理を持って行動します。</p>
-                <p class="hidden" data-lang="zh">我们对所有利益相关者保持透明和道德。</p>
+
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-handshake text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Responsabilidad y Confianza</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Actuamos con transparencia y ética con todos nuestros stakeholders.</p>
+                <p class="text-gray-600 hidden" data-lang="en">We act transparently and ethically with all our stakeholders.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">すべての関係者に対して透明性と倫理を持って行動します。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">我们对所有利益相关者保持透明和道德。</p>
             </div>
-            <div class="p-6 border border-red-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <h4 class="font-bold text-lg text-red-600 mb-2">Innovación Constante</h4>
-                <p data-lang="es">Mejoramos continuamente nuestros productos y procesos.</p>
-                <p class="hidden" data-lang="en">We continuously improve our products and processes.</p>
-                <p class="hidden" data-lang="ja">製品とプロセスを絶えず改善します。</p>
-                <p class="hidden" data-lang="zh">我们不断改进产品和工艺。</p>
+
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-lightbulb text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Innovación Constante</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Mejoramos continuamente nuestros productos y procesos.</p>
+                <p class="text-gray-600 hidden" data-lang="en">We continuously improve our products and processes.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">製品とプロセスを絶えず改善します。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">我们不断改进产品和工艺。</p>
             </div>
-            <div class="p-6 border border-red-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <h4 class="font-bold text-lg text-red-600 mb-2">Respeto por las Personas y el Entorno</h4>
-                <p data-lang="es">Valoramos a todos y promovemos prácticas sostenibles.</p>
-                <p class="hidden" data-lang="en">We value everyone and promote sustainable practices.</p>
-                <p class="hidden" data-lang="ja">すべての人に敬意を払い、持続可能な実践を推進します。</p>
-                <p class="hidden" data-lang="zh">我们尊重每个人，并推行可持续实践。</p>
+
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-heart text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Respeto por las Personas y el Entorno</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Valoramos a todos y promovemos prácticas sostenibles.</p>
+                <p class="text-gray-600 hidden" data-lang="en">We value everyone and promote sustainable practices.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">すべての人に敬意を払い、持続可能な実践を推進します。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">我们尊重每个人，并推行可持续实践。</p>
+            </div>
+
+            <div class="value-card p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-smile text-red-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-red-600">Diversión y Alegría</h4>
+                </div>
+                <p class="text-gray-600" data-lang="es">Creemos que la comida saludable también debe ser divertida y alegre para los niños.</p>
+                <p class="text-gray-600 hidden" data-lang="en">We believe healthy food should also be fun and joyful for children.</p>
+                <p class="text-gray-600 hidden" data-lang="ja">健康的な食事は子供たちにとって楽しく喜ばしいものであるべきだと信じています。</p>
+                <p class="text-gray-600 hidden" data-lang="zh">我们相信健康食品对孩子们来说也应该是有趣和快乐的。</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Productos -->
-<section id="productos" class="py-16 bg-gray-100">
+<section id="productos" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-red-600 mb-8 text-center">Nuestros Productos</h3>
+        <div class="text-center mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Nuestros Productos</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-lang="es">Descubre nuestra deliciosa gama de alimentos saludables para niños</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="en">Discover our delicious range of healthy foods for kids</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="ja">子供向けの健康的で美味しい食品のラインナップをご覧ください</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">探索我们为孩子们准备的美味健康食品系列</p>
+        </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-                <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 1" class="w-full h-48 object-cover mb-4 rounded">
-                <h4 class="font-bold text-red-600 text-lg">Danuska 1</h4>
-                <p class="text-sm text-gray-600">Snack saludable para niños con frutas naturales.</p>
+            <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 1" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-4">
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold" data-lang="es">Nuevo</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="en">New</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="ja">新着</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="zh">新品</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 1</h4>
+                <p class="text-gray-600 mb-4" data-lang="es">Snack saludable para niños con frutas naturales.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="en">Healthy snack for kids with natural fruits.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="ja">天然フルーツを使用した子供向けヘルシースナック。</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="zh">含有天然水果的儿童健康零食。</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-lg">$12.99</span>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
+                </div>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-                <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 2" class="w-full h-48 object-cover mb-4 rounded">
-                <h4 class="font-bold text-red-600 text-lg">Danuska 2</h4>
-                <p class="text-sm text-gray-600">Barras energéticas con vitaminas para el desayuno.</p>
+
+            <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 2" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-4">
+                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold" data-lang="es">Más vendido</span>
+                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="en">Best seller</span>
+                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="ja">ベストセラー</span>
+                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="zh">畅销品</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 2</h4>
+                <p class="text-gray-600 mb-4" data-lang="es">Barras energéticas con vitaminas para el desayuno.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="en">Energy bars with vitamins for breakfast.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="ja">ビタミン入りエネルギーバー、朝食用。</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="zh">含有维生素的早餐能量棒。</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-lg">$15.99</span>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
+                </div>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-                <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 3" class="w-full h-48 object-cover mb-4 rounded">
-                <h4 class="font-bold text-red-600 text-lg">Danuska 3</h4>
-                <p class="text-sm text-gray-600">Galletas integrales con sabor a chocolate y avena.</p>
+
+            <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 3" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                </div>
+                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 3</h4>
+                <p class="text-gray-600 mb-4" data-lang="es">Galletas integrales con sabor a chocolate y avena.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="en">Whole grain cookies with chocolate and oatmeal flavor.</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="ja">全粒粉クッキー、チョコレートとオートミール風味。</p>
+                <p class="text-gray-600 mb-4 hidden" data-lang="zh">全麦饼干，巧克力燕麦口味。</p>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-lg">$10.99</span>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
+                </div>
             </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition" data-lang="es">Ver todos los productos</button>
+            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="en">View all products</button>
+            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="ja">すべての商品を見る</button>
+            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="zh">查看所有产品</button>
         </div>
     </div>
 </section>
 
 <!-- Colaboradores -->
-<section id="colaboradores" class="py-16 bg-white">
+<section id="colaboradores" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-red-600 mb-8 text-center">Colaboradores</h3>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <img src="./img/profile.jpg" alt="Colaborador 1" class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-red-500 mb-3"/>
-                <h5 class="font-semibold">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600">Chef y Desarrollador de Recetas</p>
+        <div class="text-center mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Nuestro Equipo</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-lang="es">Conoce al talentoso equipo detrás de Nutrialbondi</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="en">Meet the talented team behind Nutrialbondi</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="ja">Nutrialbondiを支える才能あるチームをご紹介します</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">认识Nutrialbondi背后的才华横溢的团队</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/profile.jpg" alt="Colaborador 1" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
+                <p class="text-sm text-gray-600 mb-3">Chef y Desarrollador de Recetas</p>
+                <p class="text-sm text-gray-500 mb-4" data-lang="es">Especialista en crear recetas deliciosas y nutritivas para niños.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Specialist in creating delicious and nutritious recipes for children.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">子供向けの美味しく栄養価の高いレシピ作成の専門家。</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">专门为儿童创造美味营养食谱的专家。</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="text-center">
-                <img src="./img/profile.jpg" alt="Colaborador 2" class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-red-500 mb-3"/>
-                <h5 class="font-semibold">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600">Nutricionista Infantil</p>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/profile.jpg" alt="Colaborador 2" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
+                <p class="text-sm text-gray-600 mb-3">Nutricionista Infantil</p>
+                <p class="text-sm text-gray-500 mb-4" data-lang="es">Garantiza que todos nuestros productos cumplan con los estándares nutricionales.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Ensures all our products meet nutritional standards.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">すべての製品が栄養基準を満たしていることを保証します。</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">确保我们所有产品都符合营养标准。</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="text-center">
-                <img src="./img/profile.jpg" alt="Colaborador 3" class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-red-500 mb-3"/>
-                <h5 class="font-semibold">Nombre Apellido</h5>
-                <p class="text-sm text-gray-600">Diseñador de Packaging</p>
+
+            <div class="team-member text-center p-6">
+                <div class="relative inline-block mb-4">
+                    <img src="./img/profile.jpg" alt="Colaborador 3" class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mx-auto"/>
+                    <div class="absolute -bottom-2 right-2 bg-red-600 text-white p-2 rounded-full">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <h5 class="font-semibold text-lg">Nombre Apellido</h5>
+                <p class="text-sm text-gray-600 mb-3">Diseñador de Packaging</p>
+                <p class="text-sm text-gray-500 mb-4" data-lang="es">Crea empaques atractivos y funcionales que encantan a los niños.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="en">Creates attractive and functional packaging that delights children.</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="ja">子供たちを喜ばせる魅力的で機能的なパッケージをデザインします。</p>
+                <p class="text-sm text-gray-500 mb-4 hidden" data-lang="zh">设计吸引儿童的功能性包装。</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonios -->
+<section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4" data-lang="es">Lo que dicen nuestros clientes</h3>
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="en">What our customers say</h3>
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="ja">お客様の声</h3>
+            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="zh">客户评价</h3>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-lang="es">Historias reales de familias que confían en nosotros</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="en">Real stories from families who trust us</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="ja">私たちを信頼してくれる家族からの実際の声</p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">信任我们的家庭的真实故事</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-sm text-gray-500">5/5</span>
+                </div>
+                <p class="text-gray-600 mb-4 italic" data-lang="es">"A mis hijos les encantan los productos Nutrialbondi. Son saludables y saben increíble. ¡Ya no tengo que pelear para que coman sus snacks!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"My kids love Nutrialbondi products. They're healthy and taste amazing. I no longer have to fight to get them to eat their snacks!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「子供たちはNutrialbondiの製品が大好きです。健康的で味も素晴らしい。おやつを食べさせるために戦う必要がなくなりました！」</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"我的孩子们喜欢Nutrialbondi产品。它们健康又美味。我再也不用为让他们吃零食而斗争了！"</p>
+                <div class="flex items-center">
+                    <img src="./img/profile.jpg" alt="Cliente 1" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <div>
+                        <h5 class="font-semibold">María G.</h5>
+                        <p class="text-xs text-gray-500" data-lang="es">Madre de 2 niños</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="en">Mother of 2</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="ja">2児の母</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="zh">2个孩子的母亲</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-sm text-gray-500">5/5</span>
+                </div>
+                <p class="text-gray-600 mb-4 italic" data-lang="es">"Como nutricionista, recomiendo Nutrialbondi a mis pacientes. La combinación perfecta de nutrición y sabor que los niños adoran."</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"As a nutritionist, I recommend Nutrialbondi to my patients. The perfect combination of nutrition and flavor that kids love."</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「栄養士として、私は患者さんにNutrialbondiをお勧めします。子供たちが愛する栄養と風味の完璧な組み合わせです。」</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"作为一名营养师，我向患者推荐Nutrialbondi。孩子们喜爱的营养与美味的完美结合。"</p>
+                <div class="flex items-center">
+                    <img src="./img/profile.jpg" alt="Cliente 2" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <div>
+                        <h5 class="font-semibold">Dr. Carlos M.</h5>
+                        <p class="text-xs text-gray-500" data-lang="es">Nutricionista Pediátrico</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="en">Pediatric Nutritionist</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="ja">小児栄養士</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="zh">儿科营养师</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-sm text-gray-500">4.5/5</span>
+                </div>
+                <p class="text-gray-600 mb-4 italic" data-lang="es">"Los productos son excelentes, pero me gustaría ver más opciones sin azúcar añadido. Por lo demás, ¡perfecto!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"The products are excellent, but I'd like to see more no-added-sugar options. Otherwise, perfect!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「製品は優れていますが、添加糖なしのオプションがもっとあればと思います。それ以外は完璧です！」</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"产品很棒，但我希望看到更多无添加糖的选择。除此之外，完美！"</p>
+                <div class="flex items-center">
+                    <img src="./img/profile.jpg" alt="Cliente 3" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <div>
+                        <h5 class="font-semibold">Laura T.</h5>
+                        <p class="text-xs text-gray-500" data-lang="es">Madre y educadora</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="en">Mother and educator</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="ja">母親兼教育者</p>
+                        <p class="text-xs text-gray-500 hidden" data-lang="zh">母亲兼教育工作者</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Contacto -->
-<section id="contacto" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6 text-center">
-        <h3 class="text-3xl font-bold text-red-600 mb-8">Contáctanos</h3>
-        <p class="mb-4">Síguenos en Instagram: <a href="https://www.instagram.com/" target="_blank" class="text-red-600 hover:underline">@sin.tantavuelta</a></p>
-        <p class="mb-4">Correo: contacto@sin-tantavuelta.com</p>
-        <p>Teléfono: +54 11 1234-5678</p>
-        <div class="mt-6">
-            <a href="https://www.instagram.com/" target="_blank" class="text-white bg-red-600 hover:bg-red-700 p-3 rounded-full inline-block transition">
-                <i class="fab fa-instagram"></i>
-            </a>
+<section id="contacto" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4">Contáctanos</h3>
+                <p class="text-lg text-gray-600" data-lang="es">Estamos aquí para responder cualquier pregunta que tengas</p>
+                <p class="text-lg text-gray-600 hidden" data-lang="en">We're here to answer any questions you may have</p>
+                <p class="text-lg text-gray-600 hidden" data-lang="ja">ご質問がありましたらお気軽にお問い合わせください</p>
+                <p class="text-lg text-gray-600 hidden" data-lang="zh">我们在此回答您可能有的任何问题</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-red-50 p-8 rounded-xl">
+                    <h4 class="font-bold text-xl text-red-600 mb-6" data-lang="es">Información de contacto</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="en">Contact information</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="ja">連絡先情報</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="zh">联系信息</h4>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-red-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold" data-lang="es">Correo electrónico</h5>
+                                <h5 class="font-semibold hidden" data-lang="en">Email</h5>
+                                <h5 class="font-semibold hidden" data-lang="ja">メール</h5>
+                                <h5 class="font-semibold hidden" data-lang="zh">电子邮件</h5>
+                                <a href="mailto:contacto@nutrialbondi.com" class="text-gray-600 hover:text-red-600 transition">contacto@nutrialbondi.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold" data-lang="es">Teléfono</h5>
+                                <h5 class="font-semibold hidden" data-lang="en">Phone</h5>
+                                <h5 class="font-semibold hidden" data-lang="ja">電話</h5>
+                                <h5 class="font-semibold hidden" data-lang="zh">电话</h5>
+                                <a href="tel:+541112345678" class="text-gray-600 hover:text-red-600 transition">+54 11 1234-5678</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold" data-lang="es">Dirección</h5>
+                                <h5 class="font-semibold hidden" data-lang="en">Address</h5>
+                                <h5 class="font-semibold hidden" data-lang="ja">住所</h5>
+                                <h5 class="font-semibold hidden" data-lang="zh">地址</h5>
+                                <p class="text-gray-600" data-lang="es">Av. Siempre Viva 123, Buenos Aires, Argentina</p>
+                                <p class="text-gray-600 hidden" data-lang="en">123 Evergreen Ave, Buenos Aires, Argentina</p>
+                                <p class="text-gray-600 hidden" data-lang="ja">ブエノスアイレス、アルゼンチン</p>
+                                <p class="text-gray-600 hidden" data-lang="zh">阿根廷布宜诺斯艾利斯</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h5 class="font-semibold mb-4" data-lang="es">Síguenos en redes sociales</h5>
+                        <h5 class="font-semibold mb-4 hidden" data-lang="en">Follow us on social media</h5>
+                        <h5 class="font-semibold mb-4 hidden" data-lang="ja">ソーシャルメディアでフォロー</h5>
+                        <h5 class="font-semibold mb-4 hidden" data-lang="zh">在社交媒体上关注我们</h5>
+
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/" target="_blank" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <h4 class="font-bold text-xl text-red-600 mb-6" data-lang="es">Envía un mensaje</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="en">Send us a message</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="ja">メッセージを送る</h4>
+                    <h4 class="font-bold text-xl text-red-600 mb-6 hidden" data-lang="zh">发送消息</h4>
+
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-lang="es">Nombre</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="en">Name</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="ja">名前</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="zh">姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-300 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-300 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1" data-lang="es">Asunto</label>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="en">Subject</label>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="ja">件名</label>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="zh">主题</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-300 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1" data-lang="es">Mensaje</label>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="en">Message</label>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="ja">メッセージ</label>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1 hidden" data-lang="zh">消息</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-300 outline-none transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition" data-lang="es">Enviar mensaje</button>
+                        <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition hidden" data-lang="en">Send message</button>
+                        <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition hidden" data-lang="ja">送信</button>
+                        <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition hidden" data-lang="zh">发送消息</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<!-- Footer -->
-<footer class="bg-red-700 text-white text-center py-6">
-    <p data-lang="es">&copy; 2025 NUTRIALBONDI - Sin Tanta Vuelta. Todos los derechos reservados.</p>
-    <p class="hidden" data-lang="en">&copy; 2025 NUTRIALBONDI - No Beating Around the Bush. All rights reserved.</p>
-    <p class="hidden" data-lang="ja">&copy; 2025 NUTRIALBONDI - シンプルにいこう。全著作権所有。</p>
-    <p class="hidden" data-lang="zh">&copy; 2025 NUTRIALBONDI - 简单直接。版权所有。</p>
-</footer>
+<footer class="bg-red-700 text-white py-8">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="md:col-span-2">
+                <img src="./img/logo%20nutrialbondi.png" alt="Logo NUTRIALBONDI" class="h-12 mb-4">
+                <p class="text-red-100 mb-4" data-lang="es">Alimentos nutritivos y divertidos para niños. Combinamos sabor, salud y confianza.</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="en">Nutritious and fun foods for kids. We combine taste, health, and trust.</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="ja">子供のための栄養たっぷりで楽しい食品。味、健康、信頼を組み合わせます。</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="zh">为孩子们提供营养又有趣的食品。我们结合美味、健康与信任。</p>
 
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="font-bold text-lg mb-4" data-lang="es">Enlaces rápidos</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="en">Quick links</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="ja">クイックリンク</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="zh">快速链接</h5>
+
+                <ul class="space-y-2">
+                    <li><a href="#inicio" class="text-red-100 hover:text-yellow-300 transition" data-lang="es">Inicio</a></li>
+                    <li><a href="#inicio" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="en">Home</a></li>
+                    <li><a href="#inicio" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="ja">ホーム</a></li>
+                    <li><a href="#inicio" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="zh">首页</a></li>
+
+                    <li><a href="#productos" class="text-red-100 hover:text-yellow-300 transition" data-lang="es">Productos</a></li>
+                    <li><a href="#productos" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="en">Products</a></li>
+                    <li><a href="#productos" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="ja">商品</a></li>
+                    <li><a href="#productos" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="zh">产品</a></li>
+
+                    <li><a href="#contacto" class="text-red-100 hover:text-yellow-300 transition" data-lang="es">Contacto</a></li>
+                    <li><a href="#contacto" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="en">Contact</a></li>
+                    <li><a href="#contacto" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="ja">お問い合わせ</a></li>
+                    <li><a href="#contacto" class="text-red-100 hover:text-yellow-300 transition hidden" data-lang="zh">联系</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="font-bold text-lg mb-4" data-lang="es">Suscríbete</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="en">Subscribe</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="ja">購読</h5>
+                <h5 class="font-bold text-lg mb-4 hidden" data-lang="zh">订阅</h5>
+
+                <p class="text-red-100 mb-4" data-lang="es">Recibe nuestras últimas novedades y promociones.</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="en">Receive our latest news and promotions.</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="ja">最新情報とプロモーションを受け取る。</p>
+                <p class="text-red-100 mb-4 hidden" data-lang="zh">接收我们的最新消息和促销活动。</p>
+
+                <form class="flex">
+                    <input type="email" placeholder="Tu email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded-r-lg font-semibold hover:bg-yellow-300 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-red-600 mt-8 pt-6 text-center text-red-100">
+            <p data-lang="es">&copy; 2025 NUTRIALBONDI - Sin Tanta Vuelta. Todos los derechos reservados.</p>
+            <p class="hidden" data-lang="en">&copy; 2025 NUTRIALBONDI - No Beating Around the Bush. All rights reserved.</p>
+            <p class="hidden" data-lang="ja">&copy; 2025 NUTRIALBONDI - シンプルにいこう。全著作権所有。</p>
+            <p class="hidden" data-lang="zh">&copy; 2025 NUTRIALBONDI - 简单直接。版权所有。</p>
+        </div>
+    </div>
+</footer>
 
 <!-- Language Switcher JS -->
 <script>
+    // Función para cambiar el idioma
+    // Función para cambiar el idioma
     function changeLang(lang) {
-        document.querySelectorAll("[data-lang]").forEach(el => {
-            if (el.getAttribute("data-lang") === lang) {
-                el.classList.remove("hidden");
-            } else {
-                el.classList.add("hidden");
-            }
+        // Ocultar todos los elementos de todos los idiomas
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            element.classList.add('hidden');
         });
+
+        // Mostrar solo los elementos del idioma seleccionado
+        document.querySelectorAll(`[data-lang="${lang}"]`).forEach(element => {
+            element.classList.remove('hidden');
+        });
+
+        // Actualizar ambos selectores de idioma
+        document.getElementById('langSelector').value = lang;
+        document.getElementById('mobileLangSelector').value = lang;
+
+        // Guardar preferencia de idioma
+        localStorage.setItem('preferredLang', lang);
     }
-    // Selector de idioma
+
+    // Manejar el botón del menú móvil
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+        const nav = document.getElementById('mainNav');
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('active');
+    });
+
+    // Selectores de idioma
     document.getElementById('langSelector').addEventListener('change', function() {
         changeLang(this.value);
     });
-    // Idioma por defecto
-    changeLang("es");
+
+    document.getElementById('mobileLangSelector').addEventListener('change', function() {
+        changeLang(this.value);
+    });
+
+    // Cargar idioma preferido o usar español por defecto
+    const preferredLang = localStorage.getItem('preferredLang') || 'es';
+    changeLang(preferredLang);
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 768) {
+                document.getElementById('mainNav').classList.add('hidden');
+            }
+        });
+    });
+
+    // Ajustar el menú al cambiar el tamaño de la ventana
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            document.getElementById('mainNav').classList.remove('hidden');
+        } else {
+            document.getElementById('mainNav').classList.add('hidden');
+        }
+    });
+
+    // Configurar ScrollReveal para animaciones
+    ScrollReveal().reveal('.sr-delay-1', { delay: 100 });
+    ScrollReveal().reveal('.sr-delay-2', { delay: 200 });
+    ScrollReveal().reveal('.sr-delay-3', { delay: 300 });
+    ScrollReveal().reveal('.sr-delay-4', { delay: 400 });
+    ScrollReveal().reveal('.sr-delay-5', { delay: 500 });
+
+    // Botón para ir arriba
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('active');
+        } else {
+            scrollTopBtn.classList.remove('active');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Smooth scrolling para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Video autoplay en móviles (requiere interacción del usuario)
+    document.addEventListener('DOMContentLoaded', function() {
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach(video => {
+            // Para móviles, agregamos un botón de play overlay
+            if (window.innerWidth <= 768) {
+                const playButton = document.createElement('div');
+                playButton.innerHTML = '<i class="fas fa-play"></i>';
+                playButton.style.position = 'absolute';
+                playButton.style.top = '50%';
+                playButton.style.left = '50%';
+                playButton.style.transform = 'translate(-50%, -50%)';
+                playButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                playButton.style.color = 'white';
+                playButton.style.width = '60px';
+                playButton.style.height = '60px';
+                playButton.style.borderRadius = '50%';
+                playButton.style.display = 'flex';
+                playButton.style.justifyContent = 'center';
+                playButton.style.alignItems = 'center';
+                playButton.style.cursor = 'pointer';
+                playButton.style.zIndex = '10';
+
+                playButton.addEventListener('click', function() {
+                    video.play();
+                    this.style.display = 'none';
+                });
+
+                video.parentNode.style.position = 'relative';
+                video.parentNode.appendChild(playButton);
+
+                video.addEventListener('play', function() {
+                    playButton.style.display = 'none';
+                });
+            } else {
+                // En desktop, intentamos autoplay con mute
+                video.muted = true;
+                const playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        // Si falla el autoplay, mostramos controles
+                        video.controls = true;
+                    });
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>
