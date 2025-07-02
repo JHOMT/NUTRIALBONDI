@@ -11,180 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <style>
-        :root {
-            --primary: #e53e3e;
-            --primary-dark: #c53030;
-            --primary-light: #feb2b2;
-            --accent: #f6e05e;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            padding: 5px;
-        }
-
-        .logo-container img {
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo-container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #F87171;
-            z-index: 0;
-            border-radius: 10px;
-        }
-
-        .hero-video {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .hero-video:hover {
-            transform: scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-            color: white;
-        }
-
-        .nav-link:hover {
-            color: #f6e05e;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #f6e05e;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .language-selector {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.5rem center;
-            background-size: 1em;
-        }
-
-        #mainNav.active {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .product-card {
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .value-card {
-            transition: all 0.3s ease;
-            background: linear-gradient(to bottom, white 80%, #fff5f5 100%);
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(to bottom, white 70%, #fed7d7 100%);
-        }
-
-        .team-member {
-            transition: all 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-        }
-
-        .team-member img {
-            transition: all 0.3s ease;
-        }
-
-        .team-member:hover img {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .language-selector {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.5rem center;
-            background-size: 1em;
-        }
-
-        .scroll-top-btn {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-top-btn.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Animaciones para ScrollReveal */
-        .sr-delay-1 { transition-delay: 100ms; }
-        .sr-delay-2 { transition-delay: 200ms; }
-        .sr-delay-3 { transition-delay: 300ms; }
-        .sr-delay-4 { transition-delay: 400ms; }
-        .sr-delay-5 { transition-delay: 500ms; }
-    </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 <!-- Scroll to Top Button -->
@@ -198,13 +24,9 @@
         <div class="flex justify-between items-center py-3">
             <div class="flex items-center space-x-2 md:space-x-4 relative">
                 <div class="logo-container relative">
-                    <img src="./img/LOGO.png" alt="Logo NUTRIALBONDI"
+                    <img src="./img/logo%20nutrialbondi.png" alt="Logo NUTRIALBONDI"
                          class="h-10 md:h-12 lg:h-14 transition-all duration-300 hover:scale-105 fi">
                 </div>
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold" data-lang="es">NUTRIALBONDI</h1>
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="en">NUTRIALBONDI</h1>
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="ja">NUTRIALBONDI</h1>
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold hidden" data-lang="zh">NUTRIALBONDI</h1>
             </div>
 
             <div class="hidden md:block">
@@ -551,92 +373,182 @@
 </section>
 
 <!-- Productos -->
-<section id="productos" class="py-16 md:py-24 bg-gray-50">
+<section id="producto" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4" data-lang="es">Nuestros Productos</h3>
-            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="en">Our Products</h3>
-            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="ja">私たちの製品</h3>
-            <h3 class="text-3xl md:text-4xl font-bold text-red-600 mb-4 hidden" data-lang="zh">我们的产品</h3>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-lang="es">Descubre nuestra deliciosa gama de alimentos saludables para niños</p>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="en">Discover our delicious range of healthy foods for kids</p>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="ja">子供向けの健康的で美味しい食品のラインナップをご覧ください</p>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto hidden" data-lang="zh">探索我们为孩子们准备的美味健康食品系列</p>
+        <!-- Encabezado con breadcrumb -->
+        <div class="mb-6">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                    <li class="inline-flex items-center">
+                        <a href="#inicio" class="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-800" data-lang="es">Inicio</a>
+                        <a href="#inicio" class="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-800 hidden" data-lang="en">Home</a>
+                        <a href="#inicio" class="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-800 hidden" data-lang="ja">ホーム</a>
+                        <a href="#inicio" class="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-800 hidden" data-lang="zh">首页</a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <svg class="w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                            </svg>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2" data-lang="es">Albóndigas Nutrialbondi</span>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 hidden" data-lang="en">Nutrialbondi Meatballs</span>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 hidden" data-lang="ja">Nutrialbondiミートボール</span>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 hidden" data-lang="zh">Nutrialbondi肉丸</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="product-card bg-white p-6 rounded-xl shadow-md">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
-                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 1" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-4">
-                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold" data-lang="es">Nuevo</span>
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div class="space-y-4">
+                <div class="relative overflow-hidden rounded-xl shadow-lg h-80 md:h-96 bg-white">
+                    <img src="./img/ALBÓNDIGAS.jpg" alt="Albóndigas Nutrialbondi" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold" data-lang="es">Novedad</span>
                         <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="en">New</span>
-                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="ja">新着</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="ja">新商品</span>
                         <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="zh">新品</span>
                     </div>
                 </div>
-                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 1</h4>
-                <p class="text-gray-600 mb-4" data-lang="es">Snack saludable para niños con frutas naturales.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="en">Healthy snack for kids with natural fruits.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="ja">天然フルーツを使用した子供向けヘルシースナック。</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="zh">含有天然水果的儿童健康零食。</p>
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-lg">$12.99</span>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
-                </div>
-            </div>
-
-            <div class="product-card bg-white p-6 rounded-xl shadow-md">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
-                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 2" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-4">
-                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold" data-lang="es">Más vendido</span>
-                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="en">Best seller</span>
-                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="ja">ベストセラー</span>
-                        <span class="bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold hidden" data-lang="zh">畅销品</span>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-400 transition">
+                        <img src="./img/ALBÓNDIGAS.jpg" alt="Vista 1" class="w-full h-20 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-400 transition">
+                        <img src="./img/ALBÓNDIGAS.jpg" alt="Vista 2" class="w-full h-20 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-400 transition">
+                        <img src="./img/ALBÓNDIGAS.jpg" alt="Vista 3" class="w-full h-20 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-400 transition">
+                        <img src="./img/ALBÓNDIGAS.jpg" alt="Vista 4" class="w-full h-20 object-cover">
                     </div>
                 </div>
-                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 2</h4>
-                <p class="text-gray-600 mb-4" data-lang="es">Barras energéticas con vitaminas para el desayuno.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="en">Energy bars with vitamins for breakfast.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="ja">ビタミン入りエネルギーバー、朝食用。</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="zh">含有维生素的早餐能量棒。</p>
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-lg">$15.99</span>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
-                </div>
             </div>
 
-            <div class="product-card bg-white p-6 rounded-xl shadow-md">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-48">
-                    <img src="./img/ALBÓNDIGAS.jpg" alt="Producto Danuska 3" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold text-red-600 mb-2">Albóndigas Nutrialbondi</h1>
+
+                <div class="flex items-center mb-6">
+                    <div class="flex text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-sm text-gray-500">4.7/5 (128 <span data-lang="es">reseñas</span><span class="hidden" data-lang="en">reviews</span><span class="hidden" data-lang="ja">レビュー</span><span class="hidden" data-lang="zh">评价</span>)</span>
                 </div>
-                <h4 class="font-bold text-xl text-red-600 mb-2">Danuska 3</h4>
-                <p class="text-gray-600 mb-4" data-lang="es">Galletas integrales con sabor a chocolate y avena.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="en">Whole grain cookies with chocolate and oatmeal flavor.</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="ja">全粒粉クッキー、チョコレートとオートミール風味。</p>
-                <p class="text-gray-600 mb-4 hidden" data-lang="zh">全麦饼干，巧克力燕麦口味。</p>
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-lg">$10.99</span>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition" data-lang="es">Comprar</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="en">Buy</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="ja">購入</button>
-                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition hidden" data-lang="zh">购买</button>
+
+                <div class="prose max-w-none mb-8">
+                    <p class="text-gray-700 mb-4" data-lang="es">Nuestras albóndigas Nutrialbondi son el alimento perfecto para los más pequeños, elaboradas con ingredientes 100% naturales, ricas en proteínas y hierro, sin conservantes ni aditivos artificiales.</p>
+                    <p class="text-gray-700 mb-4 hidden" data-lang="en">Our Nutrialbondi meatballs are the perfect food for little ones, made with 100% natural ingredients, rich in protein and iron, with no preservatives or artificial additives.</p>
+                    <p class="text-gray-700 mb-4 hidden" data-lang="ja">Nutrialbondiミートボールは、100%天然素材を使用し、タンパク質と鉄分が豊富で、防腐剤や人工添加物を含まない、お子様に最適な食品です。</p>
+                    <p class="text-gray-700 mb-4 hidden" data-lang="zh">我们的Nutrialbondi肉丸是幼儿的完美食品，采用100%天然成分制成，富含蛋白质和铁，不含防腐剂或人工添加剂。</p>
+
+                    <h3 class="text-xl font-semibold text-red-600 mb-3" data-lang="es">Beneficios clave</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="en">Key benefits</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="ja">主な利点</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="zh">主要优点</h3>
+
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-lang="es">Alto contenido en proteínas de calidad</span>
+                            <span class="hidden" data-lang="en">High quality protein content</span>
+                            <span class="hidden" data-lang="ja">高品質なタンパク質が豊富</span>
+                            <span class="hidden" data-lang="zh">优质蛋白质含量高</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-lang="es">Fuente natural de hierro</span>
+                            <span class="hidden" data-lang="en">Natural source of iron</span>
+                            <span class="hidden" data-lang="ja">天然の鉄分源</span>
+                            <span class="hidden" data-lang="zh">天然铁来源</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-lang="es">Textura suave ideal para niños</span>
+                            <span class="hidden" data-lang="en">Soft texture ideal for children</span>
+                            <span class="hidden" data-lang="ja">子供に理想的な柔らかい食感</span>
+                            <span class="hidden" data-lang="zh">适合儿童的柔软质地</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span data-lang="es">Sin conservantes ni colorantes artificiales</span>
+                            <span class="hidden" data-lang="en">No preservatives or artificial colors</span>
+                            <span class="hidden" data-lang="ja">防腐剤や人工着色料不使用</span>
+                            <span class="hidden" data-lang="zh">不含防腐剂或人工色素</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Información nutricional -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-red-600 mb-3" data-lang="es">Información nutricional</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="en">Nutritional information</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="ja">栄養情報</h3>
+                    <h3 class="text-xl font-semibold text-red-600 mb-3 hidden" data-lang="zh">营养信息</h3>
+
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                        <div class="grid grid-cols-3 gap-2 text-center border-b pb-2 mb-2">
+                            <span class="font-medium text-gray-500" data-lang="es">Porción 100g</span>
+                            <span class="font-medium text-gray-500 hidden" data-lang="en">Serving 100g</span>
+                            <span class="font-medium text-gray-500 hidden" data-lang="ja">100gあたり</span>
+                            <span class="font-medium text-gray-500 hidden" data-lang="zh">每100克</span>
+                            <span class="font-medium text-gray-500">%VD*</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span data-lang="es">Valor energético</span>
+                                <span class="hidden" data-lang="en">Energy value</span>
+                                <span class="hidden" data-lang="ja">エネルギー</span>
+                                <span class="hidden" data-lang="zh">能量值</span>
+                                <span>150kcal</span>
+                                <span>8%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span data-lang="es">Proteínas</span>
+                                <span class="hidden" data-lang="en">Proteins</span>
+                                <span class="hidden" data-lang="ja">タンパク質</span>
+                                <span class="hidden" data-lang="zh">蛋白质</span>
+                                <span>12g</span>
+                                <span>24%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span data-lang="es">Hierro</span>
+                                <span class="hidden" data-lang="en">Iron</span>
+                                <span class="hidden" data-lang="ja">鉄分</span>
+                                <span class="hidden" data-lang="zh">铁</span>
+                                <span>2.5mg</span>
+                                <span>18%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">*<span data-lang="es">Valores diarios de referencia para una dieta de 2000kcal</span><span class="hidden" data-lang="en">Daily reference values for a 2000kcal diet</span><span class="hidden" data-lang="ja">2000kcal食事に対する1日基準値</span><span class="hidden" data-lang="zh">基于2000千卡饮食的每日参考值</span></p>
+                    </div>
+                </div>
+
+                <!-- CTA principal -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-lg" data-lang="es">¿Listo para probar nuestras albóndigas?</h4>
+                            <h4 class="font-bold text-lg hidden" data-lang="en">Ready to try our meatballs?</h4>
+                            <h4 class="font-bold text-lg hidden" data-lang="ja">ミートボールを試してみませんか？</h4>
+                            <h4 class="font-bold text-lg hidden" data-lang="zh">准备好尝试我们的肉丸了吗？</h4>
+                            <p class="text-sm text-gray-600" data-lang="es">Disponible en supermercados seleccionados</p>
+                            <p class="text-sm text-gray-600 hidden" data-lang="en">Available at selected supermarkets</p>
+                            <p class="text-sm text-gray-600 hidden" data-lang="ja">選ばれたスーパーマーケットで販売中</p>
+                            <p class="text-sm text-gray-600 hidden" data-lang="zh">在精选超市有售</p>
+                        </div>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition whitespace-nowrap" data-lang="es">COMPRAR AHORA</button>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition whitespace-nowrap hidden" data-lang="en">BUY NOW</button>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition whitespace-nowrap hidden" data-lang="ja">今すぐ購入</button>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition whitespace-nowrap hidden" data-lang="zh">立即购买</button>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="text-center mt-12">
-            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition" data-lang="es">Ver todos los productos</button>
-            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="en">View all products</button>
-            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="ja">すべての商品を見る</button>
-            <button class="bg-white text-red-600 border border-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-50 transition hidden" data-lang="zh">查看所有产品</button>
         </div>
     </div>
 </section>
@@ -822,12 +734,12 @@
                     </div>
                     <span class="text-sm text-gray-500">5/5</span>
                 </div>
-                <p class="text-gray-600 mb-4 italic" data-lang="es">"A mis hijos les encantan los productos Nutrialbondi. Son saludables y saben increíble. ¡Ya no tengo que pelear para que coman sus snacks!"</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"My kids love Nutrialbondi products. They're healthy and taste amazing. I no longer have to fight to get them to eat their snacks!"</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「子供たちはNutrialbondiの製品が大好きです。健康的で味も素晴らしい。おやつを食べさせるために戦う必要がなくなりました！」</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"我的孩子们喜欢Nutrialbondi产品。它们健康又美味。我再也不用为让他们吃零食而斗争了！"</p>
+                <p class="text-gray-600 mb-4 italic" data-lang="es">"A mis hijos les encantan las Nutrialbondi. Son saludables y saben increíble. ¡Ya no tengo que pelear para que coman sus snacks!</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"My kids love Nutrialbondi. They are healthy and taste amazing. I no longer have to fight to get them to eat their snacks!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「子供たちはNutrialbondiが大好きです。健康的で味も素晴らしい。おやつを食べさせるために戦う必要がなくなりました！」</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"我的孩子们喜欢Nutrialbondi。它们健康又美味。我不再需要为让他们吃零食而争吵！"</p>
                 <div class="flex items-center">
-                    <img src="./img/profile.jpg" alt="Cliente 1" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <img src="./img/MariaG.jpg" alt="Cliente 1" class="w-10 h-10 rounded-full object-cover mr-3">
                     <div>
                         <h5 class="font-semibold">María G.</h5>
                         <p class="text-xs text-gray-500" data-lang="es">Madre de 2 niños</p>
@@ -854,7 +766,7 @@
                 <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「栄養士として、私は患者さんにNutrialbondiをお勧めします。子供たちが愛する栄養と風味の完璧な組み合わせです。」</p>
                 <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"作为一名营养师，我向患者推荐Nutrialbondi。孩子们喜爱的营养与美味的完美结合。"</p>
                 <div class="flex items-center">
-                    <img src="./img/profile.jpg" alt="Cliente 2" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <img src="./img/CarlosM.jpg" alt="Cliente 2" class="w-10 h-10 rounded-full object-cover mr-3">
                     <div>
                         <h5 class="font-semibold">Dr. Carlos M.</h5>
                         <p class="text-xs text-gray-500" data-lang="es">Nutricionista Pediátrico</p>
@@ -876,12 +788,12 @@
                     </div>
                     <span class="text-sm text-gray-500">4.5/5</span>
                 </div>
-                <p class="text-gray-600 mb-4 italic" data-lang="es">"Los productos son excelentes, pero me gustaría ver más opciones sin azúcar añadido. Por lo demás, ¡perfecto!"</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"The products are excellent, but I'd like to see more no-added-sugar options. Otherwise, perfect!"</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「製品は優れていますが、添加糖なしのオプションがもっとあればと思います。それ以外は完璧です！」</p>
-                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"产品很棒，但我希望看到更多无添加糖的选择。除此之外，完美！"</p>
+                <p class="text-gray-600 mb-4 italic" data-lang="es">"Las Nutrialbondi son excelentes en precio y sabor, pero me gustaría ver más opciones de snacks. Por lo demás, ¡perfecto!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="en">"Nutrialbondi are excellent in price and flavor, but I'd like to see more snack options. Otherwise, perfect!"</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="ja">「Nutrialbondiは価格と風味が素晴らしいですが、もっとスナックの選択肢があればと思います。それ以外は完璧です！」</p>
+                <p class="text-gray-600 mb-4 italic hidden" data-lang="zh">"Nutrialbondi在价格和口味上都很出色，但我希望看到更多零食选择。除此之外，完美！"</p>
                 <div class="flex items-center">
-                    <img src="./img/profile.jpg" alt="Cliente 3" class="w-10 h-10 rounded-full object-cover mr-3">
+                    <img src="./img/LauraT.jpg" alt="Cliente 3" class="w-10 h-10 rounded-full object-cover mr-3">
                     <div>
                         <h5 class="font-semibold">Laura T.</h5>
                         <p class="text-xs text-gray-500" data-lang="es">Madre y educadora</p>
@@ -927,7 +839,7 @@
                                 <h5 class="font-semibold hidden" data-lang="en">Email</h5>
                                 <h5 class="font-semibold hidden" data-lang="ja">メール</h5>
                                 <h5 class="font-semibold hidden" data-lang="zh">电子邮件</h5>
-                                <a href="mailto:contacto@nutrialbondi.com" class="text-gray-600 hover:text-red-600 transition">contacto@nutrialbondi.com</a>
+                                <a href="mailto:Nutrialbondi@corp.com" class="text-gray-600 hover:text-red-600 transition">Nutrialbondi@corp.com</a>
                             </div>
                         </div>
 
@@ -940,7 +852,7 @@
                                 <h5 class="font-semibold hidden" data-lang="en">Phone</h5>
                                 <h5 class="font-semibold hidden" data-lang="ja">電話</h5>
                                 <h5 class="font-semibold hidden" data-lang="zh">电话</h5>
-                                <a href="tel:+541112345678" class="text-gray-600 hover:text-red-600 transition">+54 11 1234-5678</a>
+                                <a href="tel:+51957421884" class="text-gray-600 hover:text-red-600 transition">+51 957421884</a>
                             </div>
                         </div>
 
@@ -953,10 +865,20 @@
                                 <h5 class="font-semibold hidden" data-lang="en">Address</h5>
                                 <h5 class="font-semibold hidden" data-lang="ja">住所</h5>
                                 <h5 class="font-semibold hidden" data-lang="zh">地址</h5>
-                                <p class="text-gray-600" data-lang="es">Av. Siempre Viva 123, Buenos Aires, Argentina</p>
-                                <p class="text-gray-600 hidden" data-lang="en">123 Evergreen Ave, Buenos Aires, Argentina</p>
-                                <p class="text-gray-600 hidden" data-lang="ja">ブエノスアイレス、アルゼンチン</p>
-                                <p class="text-gray-600 hidden" data-lang="zh">阿根廷布宜诺斯艾利斯</p>
+                                <p class="text-gray-600" data-lang="es">Av Juan Barday Z - I Parque Industrial 380 Lurin Lima</p>
+                                <p class="text-gray-600 hidden" data-lang="en">Av Juan Barday Z - I Industrial Park 380 Lurin Lima</p>
+                                <p class="text-gray-600 hidden" data-lang="ja">Av Juan Barday Z - I 工業団地 380 Lurin リマ</p>
+                                <p class="text-gray-600 hidden" data-lang="zh">Av Juan Barday Z - I 工业园区 380 Lurin Lima</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold" data-lang="es">RUC</h5>
+                                <h5 class="font-semibold hidden" data-lang="en">RUC</h5>
+                                <h5 class="font-semibold hidden" data-lang="ja">RUC</h5>
+                                <h5 class="font-semibold hidden" data-lang="zh">RUC</h5>
+                                <p class="text-gray-600" data-lang="es">20550858462</p>
+                                <p class="text-gray-600 hidden" data-lang="en">20550858462</p>
+                                <p class="text-gray-600 hidden" data-lang="ja">20550858462</p>
+                                <p class="text-gray-600 hidden" data-lang="zh">20550858462</p>
                             </div>
                         </div>
                     </div>
